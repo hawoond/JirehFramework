@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JirehFramework", "..\JirehFramework", "{9C299ECE-C905-4893-A8AC-E398C8602E2C}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.2"
+		ProjectReferences = "{3dbf9a60-28a1-4daa-a50f-87e02234a7b9}|EntityConnecter.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_41402"
+		Debug.AspNetCompiler.PhysicalPath = "..\JirehFramework\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41402\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_41402"
+		Release.AspNetCompiler.PhysicalPath = "..\JirehFramework\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41402\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "41402"
+		SlnRelativePath = "..\JirehFramework\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityConnecter", "..\EntitySample\EntityConnecter.csproj", "{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Debug|x64.Build.0 = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Release|x64.ActiveCfg = Debug|Any CPU
+		{9C299ECE-C905-4893-A8AC-E398C8602E2C}.Release|x64.Build.0 = Debug|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Release|x64.ActiveCfg = Release|x64
+		{3DBF9A60-28A1-4DAA-A50F-87E02234A7B9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {204A0C2D-31D2-4A63-B98A-E6C10AA333C7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/imrsol
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = .
+		SccLocalPath1 = .
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = ..\\EntitySample\\EntityConnecter.csproj
+		SccProjectName2 = ../EntitySample
+		SccLocalPath2 = ..\\EntitySample
+	EndGlobalSection
+EndGlobal

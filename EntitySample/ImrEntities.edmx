@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="imrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MTCOTPCD">
+          <Key>
+            <PropertyRef Name="CO_CD" />
+            <PropertyRef Name="CO_CD_DTL" />
+          </Key>
+          <Property Name="CO_CD" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CO_CD_DTL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CO_CD_DOC" Type="varchar" MaxLength="50" />
+          <Property Name="CO_CD_CMT" Type="varchar(max)" />
+          <Property Name="USE_YN" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="OTADCOPY">
+          <Key>
+            <PropertyRef Name="CONS_COPY_CD" />
+          </Key>
+          <Property Name="CONS_COPY_CD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="COPY_NM" Type="varchar" MaxLength="50" />
+          <Property Name="COPY_PHONE" Type="varchar" MaxLength="15" />
+          <Property Name="COPY_HOMEPAGE" Type="varchar(max)" />
+          <Property Name="COPY_MAIL" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="OTCSHREV">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="REV_SEQ" />
+          </Key>
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="USER_NO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="REV_SEQ" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="USE_YN" Type="varchar" MaxLength="2" />
+          <Property Name="ENT_DTM" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OTCSINFO">
+          <Key>
+            <PropertyRef Name="CONS_SEQ" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="CONS_SEQ" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CONS_TP_CD" Type="varchar" MaxLength="50" />
+          <Property Name="CONS_CT_CD" Type="varchar" MaxLength="50" />
+          <Property Name="CONS_DOC" Type="varchar(max)" />
+          <Property Name="CONS_NM" Type="varchar(max)" Nullable="false" />
+          <Property Name="CONS_PATH" Type="varchar(max)" Nullable="false" />
+          <Property Name="CONS_SIZE" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CONS_ENT_DTM" Type="datetime" Nullable="false" />
+          <Property Name="USE_YN" Type="varchar" MaxLength="2" />
+          <Property Name="CON_PRICE" Type="money" />
+          <Property Name="CONS_COPY_CD" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OTCSREVW">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="CONS_SEQ" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="USER_NO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CONS_SEQ" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="REV_SEQ" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="REV_DOC" Type="varchar(max)" />
+          <Property Name="REV_DTM" Type="datetime" />
+          <Property Name="USE_YN" Type="varchar" MaxLength="2" />
+          <Property Name="CONS_ST" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="OTCSSCRE">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CONS_PREV_PATH" Type="varchar(max)" />
+          <Property Name="CONS_THUMB" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="OTUSCSLT">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="USER_NO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CONS_SEQ" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CONS_BUY_DTM" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OTUSINFO">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="USER_GROUP" />
+          </Key>
+          <Property Name="USER_NO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_GROUP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="USER_PW" Type="varchar(max)" Nullable="false" />
+          <Property Name="USER_NICK_NM" Type="varchar" MaxLength="20" />
+          <Property Name="USER_NM" Type="varchar" MaxLength="50" />
+          <Property Name="USER_BIRTH" Type="date" />
+          <Property Name="USER_PHONE" Type="varchar" MaxLength="15" />
+          <Property Name="USER_MAIL_ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="ENT_DTM" Type="datetime" />
+          <Property Name="USE_YN" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="OTUSMYLT">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+            <PropertyRef Name="USER_NO" />
+          </Key>
+          <Property Name="CONS_ID" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="USER_NO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SEQ" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ENT_DTM" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'imr.dbo.PatientInfo'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="PatientInfo">
+          <Key>
+            <PropertyRef Name="PT_NM" />
+          </Key>
+          <Property Name="PT_NO" Type="varchar" MaxLength="8" />
+          <Property Name="PT_NM" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="imrModelStoreContainer">
+          <EntitySet Name="MTCOTPCD" EntityType="Self.MTCOTPCD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTADCOPY" EntityType="Self.OTADCOPY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTCSHREV" EntityType="Self.OTCSHREV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTCSINFO" EntityType="Self.OTCSINFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTCSREVW" EntityType="Self.OTCSREVW" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTCSSCRE" EntityType="Self.OTCSSCRE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTUSCSLT" EntityType="Self.OTUSCSLT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTUSINFO" EntityType="Self.OTUSINFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTUSMYLT" EntityType="Self.OTUSMYLT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientInfo" EntityType="Self.PatientInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PatientInfo].[PT_NO] AS [PT_NO], 
+    [PatientInfo].[PT_NM] AS [PT_NM]
+    FROM [dbo].[PatientInfo] AS [PatientInfo]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="imrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PatientInfo">
+          <Key>
+            <PropertyRef Name="PT_NM" />
+          </Key>
+          <Property Name="PT_NO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PT_NM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="imrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PatientInfo" EntityType="Self.PatientInfo" />
+          <EntitySet Name="MTCOTPCD" EntityType="imrModel.MTCOTPCD" />
+          <EntitySet Name="OTADCOPY" EntityType="imrModel.OTADCOPY" />
+          <EntitySet Name="OTCSHREV" EntityType="imrModel.OTCSHREV" />
+          <EntitySet Name="OTCSINFO" EntityType="imrModel.OTCSINFO" />
+          <EntitySet Name="OTCSREVW" EntityType="imrModel.OTCSREVW" />
+          <EntitySet Name="OTCSSCRE" EntityType="imrModel.OTCSSCRE" />
+          <EntitySet Name="OTUSCSLT" EntityType="imrModel.OTUSCSLT" />
+          <EntitySet Name="OTUSINFO" EntityType="imrModel.OTUSINFO" />
+          <EntitySet Name="OTUSMYLT" EntityType="imrModel.OTUSMYLT" />
+        </EntityContainer>
+        <EntityType Name="MTCOTPCD">
+          <Key>
+            <PropertyRef Name="CO_CD" />
+            <PropertyRef Name="CO_CD_DTL" />
+          </Key>
+          <Property Name="CO_CD" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CO_CD_DTL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CO_CD_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CO_CD_CMT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="USE_YN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTADCOPY">
+          <Key>
+            <PropertyRef Name="CONS_COPY_CD" />
+          </Key>
+          <Property Name="CONS_COPY_CD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COPY_NM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COPY_PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COPY_HOMEPAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="COPY_MAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTCSHREV">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="REV_SEQ" />
+          </Key>
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="REV_SEQ" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="USE_YN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ENT_DTM" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTCSINFO">
+          <Key>
+            <PropertyRef Name="CONS_SEQ" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="CONS_SEQ" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_TP_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_CT_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_DOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_NM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_PATH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_SIZE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CONS_ENT_DTM" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="USE_YN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CON_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CONS_COPY_CD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTCSREVW">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="CONS_SEQ" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_SEQ" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="REV_SEQ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="REV_DOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REV_DTM" Type="DateTime" Precision="3" />
+          <Property Name="USE_YN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_ST" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTCSSCRE">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_PREV_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_THUMB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTUSCSLT">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="CONS_ID" />
+          </Key>
+          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_SEQ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CONS_BUY_DTM" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OTUSINFO">
+          <Key>
+            <PropertyRef Name="USER_NO" />
+            <PropertyRef Name="USER_GROUP" />
+          </Key>
+          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="USER_GROUP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="USER_PW" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="USER_NICK_NM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="USER_NM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_BIRTH" Type="DateTime" Precision="0" />
+          <Property Name="USER_PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="USER_MAIL_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENT_DTM" Type="DateTime" Precision="3" />
+          <Property Name="USE_YN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OTUSMYLT">
+          <Key>
+            <PropertyRef Name="CONS_ID" />
+            <PropertyRef Name="USER_NO" />
+          </Key>
+          <Property Name="CONS_ID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="USER_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SEQ" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ENT_DTM" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="imrModelStoreContainer" CdmEntityContainer="imrEntities">
+          <EntitySetMapping Name="PatientInfo">
+            <EntityTypeMapping TypeName="imrModel.PatientInfo">
+              <MappingFragment StoreEntitySet="PatientInfo">
+                <ScalarProperty Name="PT_NO" ColumnName="PT_NO" />
+                <ScalarProperty Name="PT_NM" ColumnName="PT_NM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MTCOTPCD">
+            <EntityTypeMapping TypeName="imrModel.MTCOTPCD">
+              <MappingFragment StoreEntitySet="MTCOTPCD">
+                <ScalarProperty Name="USE_YN" ColumnName="USE_YN" />
+                <ScalarProperty Name="CO_CD_CMT" ColumnName="CO_CD_CMT" />
+                <ScalarProperty Name="CO_CD_DOC" ColumnName="CO_CD_DOC" />
+                <ScalarProperty Name="CO_CD_DTL" ColumnName="CO_CD_DTL" />
+                <ScalarProperty Name="CO_CD" ColumnName="CO_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTADCOPY">
+            <EntityTypeMapping TypeName="imrModel.OTADCOPY">
+              <MappingFragment StoreEntitySet="OTADCOPY">
+                <ScalarProperty Name="COPY_MAIL" ColumnName="COPY_MAIL" />
+                <ScalarProperty Name="COPY_HOMEPAGE" ColumnName="COPY_HOMEPAGE" />
+                <ScalarProperty Name="COPY_PHONE" ColumnName="COPY_PHONE" />
+                <ScalarProperty Name="COPY_NM" ColumnName="COPY_NM" />
+                <ScalarProperty Name="CONS_COPY_CD" ColumnName="CONS_COPY_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTCSHREV">
+            <EntityTypeMapping TypeName="imrModel.OTCSHREV">
+              <MappingFragment StoreEntitySet="OTCSHREV">
+                <ScalarProperty Name="ENT_DTM" ColumnName="ENT_DTM" />
+                <ScalarProperty Name="USE_YN" ColumnName="USE_YN" />
+                <ScalarProperty Name="REV_SEQ" ColumnName="REV_SEQ" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTCSINFO">
+            <EntityTypeMapping TypeName="imrModel.OTCSINFO">
+              <MappingFragment StoreEntitySet="OTCSINFO">
+                <ScalarProperty Name="CONS_COPY_CD" ColumnName="CONS_COPY_CD" />
+                <ScalarProperty Name="CON_PRICE" ColumnName="CON_PRICE" />
+                <ScalarProperty Name="USE_YN" ColumnName="USE_YN" />
+                <ScalarProperty Name="CONS_ENT_DTM" ColumnName="CONS_ENT_DTM" />
+                <ScalarProperty Name="CONS_SIZE" ColumnName="CONS_SIZE" />
+                <ScalarProperty Name="CONS_PATH" ColumnName="CONS_PATH" />
+                <ScalarProperty Name="CONS_NM" ColumnName="CONS_NM" />
+                <ScalarProperty Name="CONS_DOC" ColumnName="CONS_DOC" />
+                <ScalarProperty Name="CONS_CT_CD" ColumnName="CONS_CT_CD" />
+                <ScalarProperty Name="CONS_TP_CD" ColumnName="CONS_TP_CD" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CONS_SEQ" ColumnName="CONS_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTCSREVW">
+            <EntityTypeMapping TypeName="imrModel.OTCSREVW">
+              <MappingFragment StoreEntitySet="OTCSREVW">
+                <ScalarProperty Name="CONS_ST" ColumnName="CONS_ST" />
+                <ScalarProperty Name="USE_YN" ColumnName="USE_YN" />
+                <ScalarProperty Name="REV_DTM" ColumnName="REV_DTM" />
+                <ScalarProperty Name="REV_DOC" ColumnName="REV_DOC" />
+                <ScalarProperty Name="REV_SEQ" ColumnName="REV_SEQ" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="CONS_SEQ" ColumnName="CONS_SEQ" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTCSSCRE">
+            <EntityTypeMapping TypeName="imrModel.OTCSSCRE">
+              <MappingFragment StoreEntitySet="OTCSSCRE">
+                <ScalarProperty Name="CONS_THUMB" ColumnName="CONS_THUMB" />
+                <ScalarProperty Name="CONS_PREV_PATH" ColumnName="CONS_PREV_PATH" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTUSCSLT">
+            <EntityTypeMapping TypeName="imrModel.OTUSCSLT">
+              <MappingFragment StoreEntitySet="OTUSCSLT">
+                <ScalarProperty Name="CONS_BUY_DTM" ColumnName="CONS_BUY_DTM" />
+                <ScalarProperty Name="CONS_SEQ" ColumnName="CONS_SEQ" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTUSINFO">
+            <EntityTypeMapping TypeName="imrModel.OTUSINFO">
+              <MappingFragment StoreEntitySet="OTUSINFO">
+                <ScalarProperty Name="USE_YN" ColumnName="USE_YN" />
+                <ScalarProperty Name="ENT_DTM" ColumnName="ENT_DTM" />
+                <ScalarProperty Name="USER_MAIL_ADDRESS" ColumnName="USER_MAIL_ADDRESS" />
+                <ScalarProperty Name="USER_PHONE" ColumnName="USER_PHONE" />
+                <ScalarProperty Name="USER_BIRTH" ColumnName="USER_BIRTH" />
+                <ScalarProperty Name="USER_NM" ColumnName="USER_NM" />
+                <ScalarProperty Name="USER_NICK_NM" ColumnName="USER_NICK_NM" />
+                <ScalarProperty Name="USER_PW" ColumnName="USER_PW" />
+                <ScalarProperty Name="USER_GROUP" ColumnName="USER_GROUP" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTUSMYLT">
+            <EntityTypeMapping TypeName="imrModel.OTUSMYLT">
+              <MappingFragment StoreEntitySet="OTUSMYLT">
+                <ScalarProperty Name="ENT_DTM" ColumnName="ENT_DTM" />
+                <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+                <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+                <ScalarProperty Name="CONS_ID" ColumnName="CONS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="c9ebd4f1cc904b3cbffe3c793569581e" Name="Diagram1">
+        <EntityTypeShape EntityType="imrModel.PatientInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.MTCOTPCD" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTADCOPY" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTCSHREV" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTCSINFO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTCSREVW" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTCSSCRE" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTUSCSLT" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTUSINFO" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="imrModel.OTUSMYLT" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
